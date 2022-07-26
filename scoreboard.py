@@ -1,4 +1,8 @@
 from turtle import Turtle
+FONT_NAME = "Courier"  # Verdana
+FONT_SIZE = 16
+FONT_WEIGHT = "normal"
+ALIGNMENT = "center"
 
 
 class Scoreboard(Turtle):
@@ -16,4 +20,8 @@ class Scoreboard(Turtle):
     def update_score(self):
         self.score += 1
         self.clear()
-        self.write(f"Score : {self.score}", align="center", font=('Arial', 16, 'normal'))
+        self.write(f"Score : {self.score}", align=ALIGNMENT, font=(FONT_NAME, FONT_SIZE, FONT_WEIGHT))
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("Game Over", align=ALIGNMENT, font=(FONT_NAME, FONT_SIZE, FONT_WEIGHT))
